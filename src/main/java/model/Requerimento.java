@@ -2,6 +2,7 @@
 package model;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -46,8 +47,10 @@ public class Requerimento implements Serializable{
     private String problema;
     @Column(name="cl_documento")
     private String documento;
-    @Column(name="observacoes")
+    @Column(name="cl_observacoes")
     private String observacoes;
+    @Column(name="cl_dataInclusao")
+    private Date dataInclusao;
 
     public Long getIdRequerimento() {
         return idRequerimento;
@@ -129,6 +132,14 @@ public class Requerimento implements Serializable{
         this.observacoes = observacoes;
     }
 
+    public Date getDataInclusao() {
+        return dataInclusao;
+    }
+
+    public void setDataInclusao(Date dataInclusao) {
+        this.dataInclusao = dataInclusao;
+    }
+        
     @Override
     public int hashCode() {
         int hash = 3;
