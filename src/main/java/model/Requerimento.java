@@ -21,7 +21,7 @@ import javax.persistence.TemporalType;
  */
 
 @Entity
-@Table(name="tb_rerquerimento")
+@Table(name="tb_requerimento")
 @NamedQueries({
     @NamedQuery(
             name="todosRequerimentos",
