@@ -12,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
@@ -50,6 +52,7 @@ public class Requerimento implements Serializable{
     @Column(name="cl_observacoes")
     private String observacoes;
     @Column(name="cl_dataInclusao")
+    @Temporal(TemporalType.DATE)
     private Date dataInclusao;
 
     public Long getIdRequerimento() {
