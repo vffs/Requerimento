@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>  
+    <!-- Requerimento id = 1 -->
+    <tb_requerimento cl_matricula="XYZ445" cl_nome="Felipe José Gomes" cl_email="felipegomes@gmail.com" 
+    cl_curso="Geografia" cl_periodo_serie="5º" cl_turno="Noite" cl_problema="Trancar a matricula"
+    cl_observacoes="Nessessito trancar a matricula por 6 meses para terminar o curso de Inglês e Espanhol para ser promovido" 
+    cl_dataInclusao="2021-02-23">
+    </tb_requerimento>
+   
+   <!-- Requerimento id = 2 -->
+    <tb_requerimento cl_matricula="XBY334" cl_nome="Ana Clara Pereira" cl_email="anacl@gmail.com" 
+    cl_curso="Analise e Desenvolvimento de Sistemas" cl_periodo_serie="5º" cl_turno="Noite" 
+    cl_problema="Matricular disciplina eletiva"
+    cl_observacoes="matricular-se na disciplina eletiva de processos ágeis de desenvolvimento de
+    software, pois não conseguiu na matricula regular" cl_dataInclusao="2021-02-24">
+    </tb_requerimento>
+
+   
+                 
+</dataset>
