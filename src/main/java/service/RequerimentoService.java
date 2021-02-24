@@ -1,6 +1,7 @@
 
 package service;
 
+import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.Stateless;
 import model.Requerimento;
@@ -28,6 +29,10 @@ public class RequerimentoService extends Service<Requerimento>{
     
     public void deletar(Requerimento requerimento){
         entityManager.remove(requerimento);
+    }
+    
+    public List<Requerimento> listarTodos(){
+        return super.getEntidades("todosRequerimentos");
     }
     
     public Requerimento criar(){
