@@ -33,8 +33,9 @@ public class RequerimentoTeste extends Teste{
     
     @Test
     public void t01_persistirRequerimento(){
-        dataInclusao = new Date();
         requerimento = requerimentoService.criar();
+        dataInclusao = new Date();
+        
         requerimento.setNome("Letícia katarina Silva");
         requerimento.setMatricula("XYZ444");
         requerimento.setEmail("leticia@gmail.com");
@@ -47,6 +48,7 @@ public class RequerimentoTeste extends Teste{
         requerimentoService.salvar(requerimento);
         assertNotNull(requerimento.getIdRequerimento());
     }
+    
     
     
 }

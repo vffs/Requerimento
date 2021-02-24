@@ -18,7 +18,7 @@ public class Teste {
     @BeforeClass
     public static void setUpClass(){
         container = EJBContainer.createEJBContainer();
-        DbUnitUtil.inserirDados();
+        
     }
     
     @AfterClass
