@@ -9,10 +9,7 @@ import org.dbunit.database.DatabaseConfig;
 import org.dbunit.database.DatabaseConnection;
 import org.dbunit.database.IDatabaseConnection;
 import org.dbunit.dataset.IDataSet;
-import org.dbunit.dataset.datatype.DefaultDataTypeFactory;
 import org.dbunit.dataset.xml.FlatXmlDataSetBuilder;
-import org.dbunit.ext.mysql.MySqlDataTypeFactory;
-import org.dbunit.ext.mysql.MySqlMetadataHandler;
 import org.dbunit.operation.DatabaseOperation;
 
 /**
@@ -30,10 +27,8 @@ public class DbUnitUtil {
         try {
             conn = DriverManager.getConnection(
                     "jdbc:derby://localhost:1527/requerimento", "APP", "APP");
-            db_conn = new DatabaseConnection(conn, "requerimento");
-            DatabaseConfig dbConfig = db_conn.getConfig();
-            dbConfig.setProperty(DatabaseConfig.PROPERTY_DATATYPE_FACTORY, new DefaultDataTypeFactory());
-            //dbConfig.setProperty(DatabaseConfig.PROPERTY_ESCAPE_PATTERN, "\"?\"");
+            db_conn = new DatabaseConnection(conn);
+            DatabaseConfig dbConfig = db_conn.getConfig();         
             FlatXmlDataSetBuilder builder = new FlatXmlDataSetBuilder();
             builder.setColumnSensing(true);
             InputStream in = DbUnitUtil.class.getResourceAsStream(XML_FILE);
