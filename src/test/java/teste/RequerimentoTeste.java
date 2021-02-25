@@ -74,5 +74,10 @@ public class RequerimentoTeste extends Teste{
         assertEquals(3, requerimentos.size());
     }
     
+    @Test
+    public void t05_buscarPorMatricula(){
+        assertNotNull(requerimentoService.buscarPorMatricula("XBY334"));
+    }
+    
     
 }
