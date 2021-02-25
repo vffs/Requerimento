@@ -14,6 +14,14 @@
     cl_observacoes="matricular-se na disciplina eletiva de processos ágeis de desenvolvimento de
     software, pois não conseguiu na matricula regular" cl_dataInclusao="2021-02-24">
     </tb_requerimento>
+    
+    <!-- Requerimento id = 3 -->
+    <tb_requerimento cl_matricula="XRT344" cl_nome="Lorenzo Gomes" cl_email="lorenzo@gmail.com" 
+    cl_curso="Design" cl_periodo_serie="3º" cl_turno="Noite" 
+    cl_problema="Trocar disciplina"
+    cl_observacoes="trocar a disciplina design1 por ingles tecnico, pois o horario não é 
+    compativel com as outras disciplinas" cl_dataInclusao="2021-02-24">
+    </tb_requerimento>
 
    
                  
