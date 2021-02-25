@@ -42,7 +42,7 @@ public class Service<T> {
     protected List<T> getEntidades(String nameQuery, Object[] parametros){
         TypedQuery<T> query = this.entityManager.createNamedQuery(nameQuery, classe);
         
-        int i = 0;
+        int i = 1;
         for(Object parametro: parametros){
             query.setParameter(i++, parametro);
         }
@@ -53,7 +53,7 @@ public class Service<T> {
     protected T getEntidade(String nameQuery, Object[] parametros){
         TypedQuery<T> query = this.entityManager.createNamedQuery(nameQuery, classe);
         
-        int i= 0;
+        int i= 1;
         for(Object parametro: parametros){
             query.setParameter(i++, parametro);
         }
