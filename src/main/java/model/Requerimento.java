@@ -30,7 +30,7 @@ import javax.persistence.TemporalType;
 public class Requerimento implements Serializable{
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "cl_idRequetimento")
     private Long idRequerimento;
     @Column(name = "cl_matricula")
