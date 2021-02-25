@@ -28,6 +28,7 @@ public class RequerimentoService extends Service<Requerimento>{
     }
     
     public void deletar(Requerimento requerimento){
+        requerimento = entityManager.merge(requerimento);
         entityManager.remove(requerimento);
     }
     
