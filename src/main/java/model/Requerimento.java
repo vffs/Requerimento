@@ -25,10 +25,15 @@ import javax.persistence.TemporalType;
 @NamedQueries({
     @NamedQuery(
             name="todosRequerimentos",
-            query="Select r From Requerimento r")
+            query="Select r From Requerimento r"),
+    @NamedQuery(
+            name="consultarPorMatricula",
+            query="Select r From Requerimento r where r.matricula=?1")
+    
 })
 public class Requerimento implements Serializable{
-    
+    public static final String REQUERIMENTO_POR_MATRICULA = "consultarPorMatricula";
+     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "cl_idRequetimento")
