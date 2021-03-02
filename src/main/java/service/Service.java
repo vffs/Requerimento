@@ -6,7 +6,7 @@ import javax.ejb.TransactionAttribute;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import static javax.persistence.PersistenceContextType.TRANSACTION;
-import javax.validation.constraints.NotNull;
+
 import static javax.ejb.TransactionAttributeType.NOT_SUPPORTED;
 import static javax.ejb.TransactionAttributeType.SUPPORTS;
 import javax.persistence.TypedQuery;
@@ -23,12 +23,12 @@ public class Service<T> {
     protected Class<T> classe;
 
     @TransactionAttribute(NOT_SUPPORTED)
-    protected void setClasse(@NotNull Class<T> classe){
+    protected void setClasse(Class<T> classe){
         this.classe = classe;
     }
     
     @TransactionAttribute(SUPPORTS)
-    public T consultarPorId(@NotNull Long id){
+    public T consultarPorId(Long id){
       return  this.entityManager.find(classe, id);
     }
     
