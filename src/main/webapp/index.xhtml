@@ -7,12 +7,11 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Requerimento</title>
-         <link rel="stylesheet" href="css/index.css"/>
     </h:head>
     <h:body>
         <ui:include src="menu.xhtml"/>
-       
-        <h:form id="formRequerimento">
+
+        <h:form id="formRequerimento" class="container">
 
             <p:panelGrid columns="3">
                 <p:outputLabel value="Matrícula"/>
@@ -50,8 +49,8 @@
                 <p:message for="rTurno"/>
 
                 <p:outputLabel value="Problema"/>
-                <p:selectOneMenu id="rProblema" value="#{requerimentoBean.cadastro.problema}" requiredMessage="Campo Problema é obrigatório">
-                    <f:selectItem itemLabel="Selecionar" itemValue="" />
+                <p:selectOneMenu  id="rProblema" value="#{requerimentoBean.cadastro.problema}" requiredMessage="Campo Problema é obrigatório">
+                    <f:selectItem  itemLabel="Selecionar" itemValue="" />
                     <f:selectItem itemLabel="Ajuste de matrícula" itemValue="Ajuste de matrícula" />
                     <f:selectItem itemLabel="Trancamento de matrícula" itemValue="Trancamento de matrícula"/>
                     <f:selectItem itemLabel="Reabertura de matrícula" itemValue="Reabertura de matrícula" />
@@ -65,7 +64,7 @@
                 <p:outputLabel/>
 
             </p:panelGrid><br/>
-            
+
             <p:commandButton value="Cadastrar" action="#{requerimentoBean.inserir()}" update="@form">
                 <p:confirm message="Deseja enviar este requerimento?"/>
             </p:commandButton>
@@ -77,7 +76,7 @@
 
 
         </h:form>
-           
+
     </h:body>
 </html>
 

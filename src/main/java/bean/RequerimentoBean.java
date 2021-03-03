@@ -22,6 +22,7 @@ import service.RequerimentoService;
 public class RequerimentoBean extends Bean<Requerimento> implements Serializable {
     private Requerimento cadastro;
     private Requerimento selecionar;
+    private List<Requerimento> requerimentos;
     
     @Inject
     private RequerimentoService requerimentoService;
@@ -54,6 +55,11 @@ public class RequerimentoBean extends Bean<Requerimento> implements Serializable
     public List<Requerimento> listarTodos(){
        return requerimentoService.listarTodos();
     }
+    
+    public List<Requerimento> buscarRequerimento(String matricula){
+        requerimentos = requerimentoService.buscarPorMatricula(matricula);
+        return requerimentos;
+    }
 
     public Requerimento getCadastro() {
         return cadastro;
@@ -70,6 +76,16 @@ public class RequerimentoBean extends Bean<Requerimento> implements Serializable
     public void setSelecionar(Requerimento selecionar) {
         this.selecionar = selecionar;
     }
+
+    public List<Requerimento> getRequerimentos() {
+        return requerimentos;
+    }
+
+    public void setRequerimentos(List<Requerimento> requerimentos) {
+        this.requerimentos = requerimentos;
+    }
+    
+    
     
     
 }

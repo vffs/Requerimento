@@ -37,8 +37,8 @@ public class RequerimentoService extends Service<Requerimento>{
         return super.getEntidades("todosRequerimentos");
     }
            
-    public Requerimento buscarPorMatricula(String matricula){
-        return super.getEntidade(REQUERIMENTO_POR_MATRICULA, new Object[]{matricula});
+    public List<Requerimento> buscarPorMatricula(String matricula){
+        return super.getEntidades(REQUERIMENTO_POR_MATRICULA, new Object[]{matricula});
     }
     
     public Requerimento criar(){
