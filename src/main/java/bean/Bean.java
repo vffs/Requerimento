@@ -27,6 +27,10 @@ public abstract class Bean<T> {
     public void setEntidade(T entidade) {
         this.entidade = entidade;
     }
+    
+    protected void adicionarMessagem(String mensagem) {
+          FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(mensagem));
+    }
 
     protected void adicionarMessagem(FacesMessage.Severity severity, String mensagem) {
         FacesMessage message = new FacesMessage(severity, mensagem, null);

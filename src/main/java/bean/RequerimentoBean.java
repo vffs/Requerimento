@@ -42,7 +42,7 @@ public class RequerimentoBean extends Bean<Requerimento> implements Serializable
         requerimentos.add(this.cadastro);
         requerimentoService.salvar(this.cadastro);
         cadastro = new Requerimento();
-        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("O requerimento foi inserido com sucesso!"));
+        adicionarMessagem("O requerimento foi inserido com sucesso!");
         return "consultarRequerimento.xhtml"; 
     }
     
@@ -63,7 +63,7 @@ public class RequerimentoBean extends Bean<Requerimento> implements Serializable
         }
         
         requerimentoService.alterar(this.selecionar);
-        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("O requerimento foi alterado com sucesso!"));
+        adicionarMessagem("O requerimento foi alterado com sucesso!");
         return "consultarRequerimento.xhtml"; 
         
     }
