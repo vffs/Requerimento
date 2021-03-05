@@ -6,41 +6,41 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Requerimento</title>
+        <title>Alterar Requerimento</title>
     </h:head>
     <h:body>
         <ui:include src="menu.xhtml"/>
-
-        <h:form id="formRequerimento" class="container">
+        
+        <h:form id="formRequerimentoAlterar" class="container">
 
             <p:panelGrid columns="3">
                 <p:outputLabel value="Matrícula"/>
-                <p:inputText id="rMatricula" value="#{requerimentoBean.cadastro.matricula}"
+                <p:inputText id="rMatricula" value="#{requerimentoBean.selecionar.matricula}"
                              required="true"  requiredMessage="Campo matrícula é obrigatório"/>
                 <p:message for="rMatricula"/>
 
                 <p:outputLabel value="Nome"/>
-                <p:inputText id="rNome" value="#{requerimentoBean.cadastro.nome}"
+                <p:inputText id="rNome" value="#{requerimentoBean.selecionar.nome}"
                              required="true" requiredMessage="Campo nome é obrigatório" />
                 <p:message for="rNome"/>
 
                 <p:outputLabel value="E-mail"/>
-                <p:inputText id="rEmail" value="#{requerimentoBean.cadastro.email}"
+                <p:inputText id="rEmail" value="#{requerimentoBean.selecionar.email}"
                              required="true" requiredMessage="Campo e-mail é obrigatório" />
                 <p:message for="rEmail"/>
 
                 <p:outputLabel value="Curso"/>
-                <p:inputText id="rCurso" value="#{requerimentoBean.cadastro.curso}"
+                <p:inputText id="rCurso" value="#{requerimentoBean.selecionar.curso}"
                              required="true" requiredMessage="Campo curso é obrigatório" />
                 <p:message for="rCurso"/>
 
                 <p:outputLabel value="Período/Série"/>
-                <p:inputText id="rPeriodoSerie" value="#{requerimentoBean.cadastro.periodoSerie}"
+                <p:inputText id="rPeriodoSerie" value="#{requerimentoBean.selecionar.periodoSerie}"
                              required="true" requiredMessage="Campo período/série é obrigatório" />
                 <p:message for="rPeriodoSerie"/>
 
                 <p:outputLabel value="Turno"/>
-                <p:selectOneMenu id="rTurno" value="#{requerimentoBean.cadastro.turno}" 
+                <p:selectOneMenu id="rTurno" value="#{requerimentoBean.selecionar.turno}" 
                                  requiredMessage="Campo turno é obrigatório" required="true">
                     <f:selectItem itemLabel="Selecionar" itemValue="" />
                     <f:selectItem itemLabel="Manhã" itemValue="Manhã" />
@@ -50,7 +50,7 @@
                 <p:message for="rTurno"/>
 
                 <p:outputLabel value="Problema"/>
-                <p:selectOneMenu  id="rProblema" value="#{requerimentoBean.cadastro.problema}" 
+                <p:selectOneMenu  id="rProblema" value="#{requerimentoBean.selecionar.problema}" 
                                   requiredMessage="Campo problema é obrigatório" required="true">
                     <f:selectItem  itemLabel="Selecionar" itemValue="" />
                     <f:selectItem itemLabel="Ajuste de matrícula" itemValue="Ajuste de matrícula" />
@@ -62,13 +62,13 @@
                 <p:message for="rProblema"/>
 
                 <p:outputLabel value="Observação"/>
-                <p:inputTextarea id="rObservacao" value="#{requerimentoBean.cadastro.observacoes}"/>
+                <p:inputTextarea id="rObservacao" value="#{requerimentoBean.selecionar.observacoes}"/>
                 <p:outputLabel/>
 
             </p:panelGrid><br/>
 
-            <p:commandButton value="Cadastrar" action="#{requerimentoBean.inserir()}" update="@form">
-                <p:confirm message="Deseja enviar este requerimento?"/>
+            <p:commandButton value="Alterar" action="#{requerimentoBean.alterar()}" update="@form">
+                <p:confirm message="Deseja alterar este requerimento?"/>
             </p:commandButton>
 
             <p:confirmDialog global="true">
@@ -76,9 +76,7 @@
                 <p:commandButton value="Não" styleClass="ui-confirmdialog-no"/>
             </p:confirmDialog>
 
-
         </h:form>
-
     </h:body>
 </html>
 

@@ -59,6 +59,8 @@ public class Requerimento implements Serializable{
     @Column(name="cl_dataInclusao")
     @Temporal(TemporalType.DATE)
     private Date dataInclusao;
+    @Column(name="cl_status")
+    private String status;
 
     public Long getIdRequerimento() {
         return idRequerimento;
@@ -147,7 +149,15 @@ public class Requerimento implements Serializable{
     public void setDataInclusao(Date dataInclusao) {
         this.dataInclusao = dataInclusao;
     }
-        
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+                
     @Override
     public int hashCode() {
         int hash = 3;

@@ -2,25 +2,25 @@
 <dataset>  
     <!-- Requerimento id = 1 -->
     <tb_requerimento cl_matricula="XYZ445" cl_nome="Felipe José Gomes" cl_email="felipegomes@gmail.com" 
-    cl_curso="Geografia" cl_periodo_serie="5º" cl_turno="Noite" cl_problema="Trancar a matricula"
+    cl_curso="Geografia" cl_periodo_serie="5º" cl_turno="Noite" cl_problema="Trancamento de matrícula"
     cl_observacoes="Nessessito trancar a matricula por 6 meses para terminar o curso de Inglês e Espanhol para ser promovido" 
-    cl_dataInclusao="2021-02-23">
+    cl_dataInclusao="2021-02-23" cl_status="Em Aberto">
     </tb_requerimento>
    
    <!-- Requerimento id = 2 -->
     <tb_requerimento cl_matricula="XBY334" cl_nome="Ana Clara Pereira" cl_email="anacl@gmail.com" 
     cl_curso="Analise e Desenvolvimento de Sistemas" cl_periodo_serie="5º" cl_turno="Noite" 
-    cl_problema="Matricular disciplina eletiva"
+    cl_problema="Ajuste de matrícula"
     cl_observacoes="matricular-se na disciplina eletiva de processos ágeis de desenvolvimento de
-    software, pois não conseguiu na matricula regular" cl_dataInclusao="2021-02-24">
+    software, pois não conseguiu na matricula regular" cl_dataInclusao="2021-02-24" cl_status="Em Aberto">
     </tb_requerimento>
     
     <!-- Requerimento id = 3 -->
     <tb_requerimento cl_matricula="XRT344" cl_nome="Lorenzo Gomes" cl_email="lorenzo@gmail.com" 
     cl_curso="Design" cl_periodo_serie="3º" cl_turno="Noite" 
-    cl_problema="Trocar disciplina"
+    cl_problema="Diploma"
     cl_observacoes="trocar a disciplina design1 por ingles tecnico, pois o horario não é 
-    compativel com as outras disciplinas" cl_dataInclusao="2021-02-24">
+    compativel com as outras disciplinas" cl_dataInclusao="2021-02-24" cl_status="Em Aberto">
     </tb_requerimento>
 
    
