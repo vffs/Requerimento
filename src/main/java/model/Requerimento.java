@@ -14,6 +14,8 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
 
 /**
  *
@@ -38,24 +40,42 @@ public class Requerimento implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "cl_idRequetimento")
     private Long idRequerimento;
+    
     @Column(name = "cl_matricula")
+    @NotBlank
     private String matricula;
+    
     @Column(name="cl_nome")
+    @NotBlank
     private String nome;
+    
     @Column(name="cl_email")
+    @NotBlank
+    @Email
     private String email;
+    
     @Column(name="cl_curso")
+    @NotBlank
     private String curso;
+    
     @Column(name="cl_periodo_serie")
+    @NotBlank
     private String periodoSerie;
+    
     @Column(name="cl_turno")
+    @NotBlank
     private String turno;
+    
     @Column(name="cl_problema")
+    @NotBlank
     private String problema;
+    
+    @Column(name="cl_observacoes")
+    @NotBlank
+    private String observacoes;
+    
     @Column(name="cl_documento")
     private String documento;
-    @Column(name="cl_observacoes")
-    private String observacoes;
     @Column(name="cl_dataInclusao")
     @Temporal(TemporalType.DATE)
     private Date dataInclusao;
@@ -181,8 +201,6 @@ public class Requerimento implements Serializable{
             return false;
         }
         return true;
-    }
-    
-    
+    }    
     
 }
