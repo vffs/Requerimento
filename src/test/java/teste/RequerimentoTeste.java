@@ -49,10 +49,10 @@ public class RequerimentoTeste extends Teste{
         requerimento.setNome("Letícia katarina Silva");
         requerimento.setMatricula("XYZ444");
         requerimento.setEmail("leticia@gmail.com");
-        requerimento.setTurno("noite");
+        requerimento.setTurno("Noite");
         requerimento.setCurso("Administração");
         requerimento.setPeriodoSerie("Concluiu");
-        requerimento.setProblema("Solicitar Diploma");
+        requerimento.setProblema("Diploma");
         requerimento.setDataInclusao(dataInclusao);
         requerimento.setObservacoes("Necessito do diploma para ser promovida");
         requerimento.setStatus("Em Aberto");  
