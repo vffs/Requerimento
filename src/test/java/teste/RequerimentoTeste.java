@@ -3,12 +3,20 @@ package teste;
 
 import java.util.Date;
 import java.util.List;
+import javax.ejb.EJBException;
 import javax.naming.NamingException;
+import javax.validation.ConstraintViolation;
+import javax.validation.ConstraintViolationException;
 import model.Requerimento;
+import org.hamcrest.CoreMatchers;
+import static org.hamcrest.CoreMatchers.startsWith;
+import static org.hamcrest.MatcherAssert.assertThat;
 import org.junit.After;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
+
 import org.junit.Before;
 import org.junit.Test;
 import service.RequerimentoService;
@@ -47,6 +55,7 @@ public class RequerimentoTeste extends Teste{
         requerimento.setProblema("Solicitar Diploma");
         requerimento.setDataInclusao(dataInclusao);
         requerimento.setObservacoes("Necessito do diploma para ser promovida");
+        requerimento.setStatus("Em Aberto");  
         requerimentoService.salvar(requerimento);
         assertNotNull(requerimento.getIdRequerimento());
     }
@@ -79,5 +88,27 @@ public class RequerimentoTeste extends Teste{
         assertNotNull(requerimentoService.buscarPorMatricula("XBY334"));
     }
     
-    
+    @Test
+    public void t06_atualizarInvalido(){
+        requerimento = requerimentoService.consultarPorId(2L);
+        requerimento.setEmail("anaClair#gmail.com");
+        requerimento.setNome(null);
+        
+        try{
+            requerimentoService.alterar(requerimento);
+            assertTrue(false);
+        }catch(EJBException ex){
+            assertTrue(ex.getCause() instanceof ConstraintViolationException);
+            ConstraintViolationException causa
+                    = (ConstraintViolationException) ex.getCause();
+            for (ConstraintViolation erroValidacao : causa.getConstraintViolations()) {
+                assertThat(erroValidacao.getMessage(),
+                        CoreMatchers.anyOf(startsWith("Não é um endereço de e-mail"),
+                                startsWith("Não pode ser branco")));
+                               
+            }
+        
+       }
+    }
+         
 }
