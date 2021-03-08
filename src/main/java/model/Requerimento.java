@@ -51,7 +51,7 @@ public class Requerimento implements Serializable{
     
     @Column(name="cl_email")
     @NotBlank
-    @Email
+    @Email(message="Não é um endereço de e-mail")
     private String email;
     
     @Column(name="cl_curso")
