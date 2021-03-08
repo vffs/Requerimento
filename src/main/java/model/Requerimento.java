@@ -42,36 +42,36 @@ public class Requerimento implements Serializable{
     private Long idRequerimento;
     
     @Column(name = "cl_matricula")
-    @NotBlank
+    @NotBlank(message="Não pode ser branco")
     private String matricula;
     
     @Column(name="cl_nome")
-    @NotBlank
+    @NotBlank(message="Não pode ser branco")
     private String nome;
     
     @Column(name="cl_email")
-    @NotBlank
+    @NotBlank(message="Não pode ser branco")
     @Email(message="Não é um endereço de e-mail")
     private String email;
     
     @Column(name="cl_curso")
-    @NotBlank
+    @NotBlank(message="Não pode ser branco")
     private String curso;
     
     @Column(name="cl_periodo_serie")
-    @NotBlank
+    @NotBlank(message="Não pode ser branco")
     private String periodoSerie;
     
     @Column(name="cl_turno")
-    @NotBlank
+    @NotBlank(message="Não pode ser branco")
     private String turno;
     
     @Column(name="cl_problema")
-    @NotBlank
+    @NotBlank(message="Não pode ser branco")
     private String problema;
     
     @Column(name="cl_observacoes")
-    @NotBlank
+    @NotBlank(message="Não pode ser branco")
     private String observacoes;
     
     @Column(name="cl_documento")
