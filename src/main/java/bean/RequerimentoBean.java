@@ -6,8 +6,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.enterprise.context.SessionScoped;
-import javax.faces.application.FacesMessage;
-import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 import model.Requerimento;
@@ -26,8 +24,7 @@ public class RequerimentoBean extends Bean<Requerimento> implements Serializable
     
     @Inject
     private RequerimentoService requerimentoService;
-    
-    
+        
     @Override
     public void iniciarCampos(){
        setEntidade(requerimentoService.criar());
@@ -104,6 +101,6 @@ public class RequerimentoBean extends Bean<Requerimento> implements Serializable
     public void setRequerimentos(List<Requerimento> requerimentos) {
         this.requerimentos = requerimentos;
     }
-    
+      
     
 }
