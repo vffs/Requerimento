@@ -62,8 +62,9 @@
                 <p:message for="rProblema"/>
 
                 <p:outputLabel value="Observação"/>
-                <p:inputTextarea id="rObservacao" value="#{requerimentoBean.cadastro.observacoes}"/>
-                <p:outputLabel/>
+                <p:inputTextarea id="rObservacao" value="#{requerimentoBean.cadastro.observacoes}" 
+                                 requiredMessage="Campo Observações é obrigatório" required="true"/>
+                 <p:message for="rObservacao"/>
 
             </p:panelGrid><br/>
 
