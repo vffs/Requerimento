@@ -4,7 +4,7 @@
     <tb_requerimento cl_matricula="XYZ445" cl_nome="Felipe José Gomes" cl_email="felipegomes@gmail.com" 
     cl_curso="Geografia" cl_periodo_serie="5º" cl_turno="Noite" cl_problema="Trancamento de matrícula"
     cl_observacoes="Nessessito trancar a matricula por 6 meses para terminar o curso de Inglês e Espanhol para ser promovido" 
-    cl_dataInclusao="2021-02-23" cl_status="Em Aberto">
+    cl_dataInclusao="2021-02-23" cl_status="Em Aberto" cl_resultado="Aguardando">
     </tb_requerimento>
    
    <!-- Requerimento id = 2 -->
@@ -12,7 +12,8 @@
     cl_curso="Analise e Desenvolvimento de Sistemas" cl_periodo_serie="5º" cl_turno="Noite" 
     cl_problema="Ajuste de matrícula"
     cl_observacoes="matricular-se na disciplina eletiva de processos ágeis de desenvolvimento de
-    software, pois não conseguiu na matricula regular" cl_dataInclusao="2021-02-24" cl_status="Em Aberto">
+    software, pois não conseguiu na matricula regular" cl_dataInclusao="2021-02-24" 
+    cl_status="Em Aberto" cl_resultado="Aguardando">
     </tb_requerimento>
     
     <!-- Requerimento id = 3 -->
@@ -20,9 +21,21 @@
     cl_curso="Design" cl_periodo_serie="3º" cl_turno="Noite" 
     cl_problema="Diploma"
     cl_observacoes="trocar a disciplina design1 por ingles tecnico, pois o horario não é 
-    compativel com as outras disciplinas" cl_dataInclusao="2021-02-24" cl_status="Em Aberto">
+    compativel com as outras disciplinas" cl_dataInclusao="2021-03-23" cl_status="Em Aberto"
+    cl_resultado="Aguardando">
     </tb_requerimento>
+    
+    <!-- Usuario 1 -->
+    <tb_usuario cl_nome="João Aparecido" cl_email="joaoap@instituicao.com.br" cl_senha="8D969EEF6ECAD3C29A3A629280E686CF0C3F5D5A86AFF3CA12020C923ADC6C92">      
+    </tb_usuario>
+    
+    <!-- Usuario 2 -->
+    <tb_usuario cl_nome="Joana Ramos" cl_email="joanars@instituicao.com.br" cl_senha="8D969EEF6ECAD3C29A3A629280E686CF0C3F5D5A86AFF3CA12020C923ADC6C92">        
+    </tb_usuario>
 
+    <!-- Usuario 3 -->
+    <tb_usuario cl_nome="Pedro Barbosa" cl_email="pedrobs@instituicao.com.br" cl_senha="8D969EEF6ECAD3C29A3A629280E686CF0C3F5D5A86AFF3CA12020C923ADC6C92">        
+    </tb_usuario>
    
                  
 </dataset>
