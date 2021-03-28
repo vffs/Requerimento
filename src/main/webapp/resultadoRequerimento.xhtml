@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <h:outputStylesheet library="css" name="padrao.css"/>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <ui:include src="menuLogado.xhtml"/>
+
+        <div class="formulario">
+            <h:form id="formResultadoRequerimento" class="container">
+
+                <p:panelGrid columns="3">
+                    <p:outputLabel value="Matrícula"/>
+                    <p:inputText id="rMatricula" value="#{requerimentoBean.selecionar.matricula}"
+                                 required="true"  requiredMessage="Campo matrícula é obrigatório"
+                                 class="form-control"/>
+                    <p:message for="rMatricula"/>
+
+                    <p:outputLabel value="Nome"/>
+                    <p:inputText id="rNome" value="#{requerimentoBean.selecionar.nome}"
+                                 required="true" requiredMessage="Campo nome é obrigatório"
+                                 class="form-control"/>
+                    <p:message for="rNome"/>               
+
+                    <p:outputLabel value="Problema"/>
+                    <p:selectOneMenu  id="rProblema" value="#{requerimentoBean.selecionar.problema}" 
+                                      requiredMessage="Campo problema é obrigatório" required="true"
+                                      class="form-control">
+                        <f:selectItem  itemLabel="Selecionar" itemValue="" />
+                        <f:selectItem itemLabel="Ajuste de matrícula" itemValue="Ajuste de matrícula" class="form-control"/>
+                        <f:selectItem itemLabel="Trancamento de matrícula" itemValue="Trancamento de matrícula" class="form-control"/>
+                        <f:selectItem itemLabel="Reabertura de matrícula" itemValue="Reabertura de matrícula" class="form-control"/>
+                        <f:selectItem itemLabel="Cancelamento de disciplina" itemValue="Cancelamento de disciplina" class="form-control"/>
+                        <f:selectItem itemLabel="Diploma" itemValue="Diploma" class="form-control"/>
+                    </p:selectOneMenu>
+                    <p:message for="rProblema"/>
+
+                    <p:outputLabel value="Observação"/>
+                    <p:inputTextarea id="rObservacao" value="#{requerimentoBean.selecionar.observacoes}" 
+                                     requiredMessage="Campo Observações é obrigatório" required="true"
+                                     class="form-control"/>
+                    <p:message for="rObservacao"/>
+
+                    <p:outputLabel value="Status"/>
+                    <p:selectOneMenu  id="rStatus" value="#{requerimentoBean.selecionar.status}" 
+                                      requiredMessage="Campo Status é obrigatório" required="true" class="form-control">
+                        <f:selectItem  itemLabel="Selecionar" itemValue="" />
+                        <f:selectItem itemLabel="Em Aberto" itemValue="Em Aberto" class="form-control"/>
+                        <f:selectItem itemLabel="Em Andamento" itemValue="Em Andamento" class="form-control"/>
+                        <f:selectItem itemLabel="Deferido" itemValue="Deferido" class="form-control" />
+                        <f:selectItem itemLabel="Indeferido" itemValue="Indeferido" class="form-control"/>
+                    </p:selectOneMenu>
+                    <p:message for="rStatus"/>
+
+                    <p:outputLabel value="Resultado"/>
+                    <p:inputTextarea id="rResultado" value="#{requerimentoBean.selecionar.resultado}" 
+                                     requiredMessage="Campo resultado é obrigatório" required="true"
+                                     class="form-control"/>
+                    <p:message for="rResultado"/>
+
+                </p:panelGrid><br/>
+
+                <p:commandButton value="Inserir Resultado" action="#{requerimentoBean.resultadoRequerimento()}"
+                                 update="@form" class="btn-padrao">
+                    <p:confirm message="Deseja Inserir o resultado do requerimento?"/>
+                </p:commandButton>
+
+                <p:confirmDialog global="true">
+                    <p:commandButton value="Sim" styleClass="ui-confirmdialog-yes"/>
+                    <p:commandButton value="Não" styleClass="ui-confirmdialog-no"/>
+                </p:confirmDialog>
+
+            </h:form>
+        </div>
+    </h:body>
+</html>
+
