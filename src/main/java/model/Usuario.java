@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -24,20 +25,26 @@ import org.hibernate.validator.constraints.NotBlank;
     @NamedQuery(
            name="todosUsuarios" ,
            query="Select u From Usuario u" 
-    )
+    ),
+    @NamedQuery(
+            name="usuarioPorEmailSenha",
+            query="Select u From Usuario u Where u.email=?1 and u.senha=?2"
+    )     
 })
 public class Usuario implements Serializable{
+    public static final String USUARIO_POR_EMAIL_SENHA = "usuarioPorEmailSenha";
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idUsuario;
     
-    @Column(name = "cl_login")
+    @Column(name = "cl_nome")
     @NotBlank(message = "Não pode ser branco")
-    private String login;
+    private String nome;
     
     @Column(name = "cl_senha")
     @NotBlank(message = "Não pode ser branco")
+    @Size(min = 6, message="Senha deve ter no mínimo 6 caracteres") 
     private String senha;
     
     @Column(name="cl_email")
@@ -53,12 +60,12 @@ public class Usuario implements Serializable{
         this.idUsuario = idUsuario;
     }
 
-    public String getLogin() {
-        return login;
+    public String getNome() {
+        return nome;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getSenha() {
