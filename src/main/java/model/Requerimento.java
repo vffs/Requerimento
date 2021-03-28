@@ -30,7 +30,14 @@ import org.hibernate.validator.constraints.NotBlank;
             query="Select r From Requerimento r"),
     @NamedQuery(
             name="consultarPorMatricula",
-            query="Select r From Requerimento r where r.matricula=?1")
+            query="Select r From Requerimento r where r.matricula=?1"),
+    @NamedQuery(
+            name="todosRequerimentosPorData",
+            query="Select r From Requerimento r ORDER BY r.dataInclusao"),
+    @NamedQuery(
+            name="todosRequerimentoVencidos",
+            query="Select r From Requerimento r where r.dataInclusao < CURRENT_DATE "
+    )
     
 })
 public class Requerimento implements Serializable{
@@ -38,7 +45,7 @@ public class Requerimento implements Serializable{
      
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "cl_idRequetimento")
+    @Column(name = "cl_idRequerimento")
     private Long idRequerimento;
     
     @Column(name = "cl_matricula")
@@ -81,7 +88,9 @@ public class Requerimento implements Serializable{
     private Date dataInclusao;
     @Column(name="cl_status")
     private String status;
-
+    @Column(name="cl_resultado")
+    private String resultado;
+    
     public Long getIdRequerimento() {
         return idRequerimento;
     }
@@ -177,7 +186,15 @@ public class Requerimento implements Serializable{
     public void setStatus(String status) {
         this.status = status;
     }
-                
+
+    public String getResultado() {
+        return resultado;
+    }
+
+    public void setResultado(String resultado) {
+        this.resultado = resultado;
+    }     
+                   
     @Override
     public int hashCode() {
         int hash = 3;
