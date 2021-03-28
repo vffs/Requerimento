@@ -5,7 +5,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.Stateless;
 import model.Usuario;
-
+import static model.Usuario.USUARIO_POR_EMAIL_SENHA;
 /**
  *
  * @author valeria
@@ -34,6 +34,10 @@ public class UsuarioService extends Service<Usuario>{
     
     public List<Usuario> buscarTodos(){
         return super.getEntidades("todosUsuarios");
+    }
+    
+    public List<Usuario> buscarUsuarioPorLoginSenha(String email, String senha) {
+        return super.getEntidades(USUARIO_POR_EMAIL_SENHA, new Object[]{email, senha});
     }
     
     public Usuario criar(){
