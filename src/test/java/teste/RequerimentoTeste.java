@@ -55,7 +55,8 @@ public class RequerimentoTeste extends Teste{
         requerimento.setProblema("Diploma");
         requerimento.setDataInclusao(dataInclusao);
         requerimento.setObservacoes("Necessito do diploma para ser promovida");
-        requerimento.setStatus("Em Aberto");  
+        requerimento.setStatus("Em Aberto"); 
+        requerimento.setResultado("Aguardando");
         requerimentoService.salvar(requerimento);
         assertNotNull(requerimento.getIdRequerimento());
     }
