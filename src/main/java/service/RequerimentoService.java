@@ -34,7 +34,20 @@ public class RequerimentoService extends Service<Requerimento>{
     }
     
     public List<Requerimento> listarTodos(){
-        return super.getEntidades("todosRequerimentos");
+        return super.getEntidades("todosRequerimentosPorData");
+    }
+    
+    public List<Requerimento> listarTodosVencidos(){
+//        Requerimento e = this.criar();
+//        
+//        List<Requerimento> requerimentos;
+//        String query ="Select * From TB_REQUERIMENTO where DATEADD(CL_DATAINCLUSAO, 15, DAY) < CURRENT_DATE ";
+//        
+//       requerimentos =  entityManager.createNativeQuery(query)
+//                .getResultList();               
+//       
+//       return requerimentos;
+       return super.getEntidades("todosRequerimentoVencidos");
     }
            
     public List<Requerimento> buscarPorMatricula(String matricula){
