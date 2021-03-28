@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <h:outputStylesheet library="css" name="padrao.css"/>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <ui:include src="menuLogado.xhtml"/>
+
+        <div class="formulario">
+            <h:form id="formApresentaTodosRequerimento" class="container-fluid" >
+                <p:dataTable id="tableTodosRequerimento" var="item" value="#{requerimentoBean.listarTodos()}" paginator="true" rows="6"
+                             selectionMode="single" selection="#{requerimentoBean.selecionar}" rowKey="#{item.idRequerimento}"
+                             paginatorPosition="bottom" class="table">
+                   
+                    <p:column headerText="Código" >
+                        #{item.idRequerimento}
+                    </p:column>
+                    <p:column headerText="Matrícula" >
+                        #{item.matricula}
+                    </p:column>
+                    <p:column >
+                        <f:facet name="header">
+                            Nome
+                        </f:facet>
+                        #{item.nome}
+                    </p:column>
+                    <p:column >
+                        <f:facet name="header">
+                            E-mail
+                        </f:facet>
+                        #{item.email}
+                    </p:column>
+                    <p:column >
+                        <f:facet name="header">
+                            Problema
+                        </f:facet>
+                        #{item.problema}
+                    </p:column>
+                    <p:column >
+                        <f:facet name="header">
+                            Observação
+                        </f:facet>
+                        #{item.observacoes}
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            Data de inclusão
+                        </f:facet>
+                        <h:outputText value="#{item.dataInclusao}">
+                            <f:convertDateTime pattern="dd/MM/yyyy" />
+                        </h:outputText>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            Status
+                        </f:facet>
+                        #{item.status}
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            Resultado
+                        </f:facet>
+                        #{item.resultado}
+                    </p:column>
+                </p:dataTable><br/>
+                <p:commandButton value="Inserir resultado" action="resultadoRequerimento.xhtml" class="btn-padrao"/>
+            </h:form>
+        </div>
+    </h:body>
+</html>
+
