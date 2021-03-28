@@ -6,76 +6,86 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
+        <h:outputStylesheet library="css" name="padrao.css"/>
         <title>Consultar Requerimento</title>
     </h:head>
     <h:body>
         <ui:include src="menu.xhtml"/>
-        <h:form id="formConsultar" class="container">
-            <p:panelGrid columns="3">
-                <p:outputLabel value="Consultar Requerimento"/>
-                <p:inputText id="rConsultar" value="#{matricula}" placeholder="Inserir a matrícula" />
+        <div class="formulario">
+            <h:form id="formConsultar" class="container paddin">
+                <p:panelGrid columns="3">
+                    <p:outputLabel value="Consultar Requerimento"/>
+                    <p:inputText id="rConsultar" value="#{matricula}" placeholder="Inserir a matrícula"
+                                 requiredMessage="É necessário informar a matrícula" required="true"
+                                 class="form-control"/>
+                    <p:message for="rConsultar"/>
+                </p:panelGrid>
+                <br/>
+                <p:commandButton value="Consultar"  action="#{requerimentoBean.buscarRequerimento(matricula)}" 
+                                 update="@form formApresentaRequerimento:tableRequerimento" class="btn-padrao"/>
+            </h:form>
 
-            </p:panelGrid>
             <br/>
-            <p:commandButton value="Consultar"  action="#{requerimentoBean.buscarRequerimento(matricula)}" 
-                             update="formApresentaRequerimento:tableRequerimento"/>
-        </h:form>
-        <br/>
 
-        <h:form id="formApresentaRequerimento" class="container-fluid" >
-            <p:dataTable id="tableRequerimento" var="item" value="#{requerimentoBean.requerimentos}" paginator="true" rows="6"
-                         selectionMode="single" selection="#{requerimentoBean.selecionar}" rowKey="#{item.idRequerimento}"
-                         >
-                <f:facet name="header">
-                    Requerimentos Cadastrado
-                </f:facet>
-                <p:column headerText="Código" >
-                    #{item.idRequerimento}
-                </p:column>
-                <p:column headerText="Matícula" >
-                    #{item.matricula}
-                </p:column>
-                <p:column >
-                    <f:facet name="header">
-                        Nome
-                    </f:facet>
-                    #{item.nome}
-                </p:column>
-                <p:column >
-                    <f:facet name="header">
-                        E-mail
-                    </f:facet>
-                    #{item.email}
-                </p:column>
-                <p:column >
-                    <f:facet name="header">
-                        Problema
-                    </f:facet>
-                    #{item.problema}
-                </p:column>
-                <p:column >
-                    <f:facet name="header">
-                        Observação
-                    </f:facet>
-                    #{item.observacoes}
-                </p:column>
-                <p:column>
-                    <f:facet name="header">
-                        Data de inclusão
-                    </f:facet>
-                    <h:outputText value="#{item.dataInclusao}">
-                        <f:convertDateTime pattern="dd/MM/yyyy" />
-                    </h:outputText>
-                </p:column>
-                <p:column>
-                    <f:facet name="header">
-                        Status
-                    </f:facet>
-                    #{item.status}
-                </p:column>
-            </p:dataTable><br/>
-            <p:commandButton value="Alterar" action="alterarRequerimento.xhtml" />
-        </h:form>
+            <h:form id="formApresentaRequerimento" class="container-fluid" >
+                <p:dataTable id="tableRequerimento" var="item" value="#{requerimentoBean.requerimentos}" paginator="true" rows="6"
+                             selectionMode="single" selection="#{requerimentoBean.selecionar}" rowKey="#{item.idRequerimento}"
+                             paginatorPosition="bottom" class="table">
+                    
+                    <p:column headerText="Código" >
+                        #{item.idRequerimento}
+                    </p:column>
+                    <p:column headerText="Matrícula" >
+                        #{item.matricula}
+                    </p:column>
+                    <p:column >
+                        <f:facet name="header">
+                            Nome
+                        </f:facet>
+                        #{item.nome}
+                    </p:column>
+                    <p:column >
+                        <f:facet name="header">
+                            E-mail
+                        </f:facet>
+                        #{item.email}
+                    </p:column>
+                    <p:column >
+                        <f:facet name="header">
+                            Problema
+                        </f:facet>
+                        #{item.problema}
+                    </p:column>
+                    <p:column >
+                        <f:facet name="header">
+                            Observação
+                        </f:facet>
+                        #{item.observacoes}
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            Data de inclusão
+                        </f:facet>
+                        <h:outputText value="#{item.dataInclusao}">
+                            <f:convertDateTime pattern="dd/MM/yyyy" />
+                        </h:outputText>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            Status
+                        </f:facet>
+                        #{item.status}
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            Resultado
+                        </f:facet>
+                        #{item.resultado}
+                    </p:column>
+                </p:dataTable><br/>
+                <p:commandButton value="Alterar" action="alterarRequerimento.xhtml" class="btn-padrao "/>
+            </h:form>
+        </div>
     </h:body>
 </html>
 

@@ -6,78 +6,88 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
+         <h:outputStylesheet library="css" name="padrao.css"/>
         <title>Alterar Requerimento</title>
     </h:head>
     <h:body>
         <ui:include src="menu.xhtml"/>
-        
-        <h:form id="formRequerimentoAlterar" class="container">
+        <div class="formulario">
+            <h:form id="formRequerimentoAlterar" class="container">
 
-            <p:panelGrid columns="3">
-                <p:outputLabel value="Matrícula"/>
-                <p:inputText id="rMatricula" value="#{requerimentoBean.selecionar.matricula}"
-                             required="true"  requiredMessage="Campo matrícula é obrigatório"/>
-                <p:message for="rMatricula"/>
+                <p:panelGrid columns="3">
+                    <p:outputLabel value="Matrícula"/>
+                    <p:inputText id="rMatricula" value="#{requerimentoBean.selecionar.matricula}"
+                                 required="true"  requiredMessage="Campo matrícula é obrigatório"
+                                 class="form-control"/>
+                    <p:message for="rMatricula"/>
 
-                <p:outputLabel value="Nome"/>
-                <p:inputText id="rNome" value="#{requerimentoBean.selecionar.nome}"
-                             required="true" requiredMessage="Campo nome é obrigatório" />
-                <p:message for="rNome"/>
+                    <p:outputLabel value="Nome"/>
+                    <p:inputText id="rNome" value="#{requerimentoBean.selecionar.nome}"
+                                 required="true" requiredMessage="Campo nome é obrigatório" 
+                                 class="form-control"/>
+                    <p:message for="rNome"/>
 
-                <p:outputLabel value="E-mail"/>
-                <p:inputText id="rEmail" value="#{requerimentoBean.selecionar.email}"
-                             required="true" requiredMessage="Campo e-mail é obrigatório" />
-                <p:message for="rEmail"/>
+                    <p:outputLabel value="E-mail"/>
+                    <p:inputText id="rEmail" value="#{requerimentoBean.selecionar.email}"
+                                 required="true" requiredMessage="Campo e-mail é obrigatório" 
+                                 class="form-control"/>
+                    <p:message for="rEmail"/>
 
-                <p:outputLabel value="Curso"/>
-                <p:inputText id="rCurso" value="#{requerimentoBean.selecionar.curso}"
-                             required="true" requiredMessage="Campo curso é obrigatório" />
-                <p:message for="rCurso"/>
+                    <p:outputLabel value="Curso"/>
+                    <p:inputText id="rCurso" value="#{requerimentoBean.selecionar.curso}"
+                                 required="true" requiredMessage="Campo curso é obrigatório" 
+                                 class="form-control"/>
+                    <p:message for="rCurso"/>
 
-                <p:outputLabel value="Período/Série"/>
-                <p:inputText id="rPeriodoSerie" value="#{requerimentoBean.selecionar.periodoSerie}"
-                             required="true" requiredMessage="Campo período/série é obrigatório" />
-                <p:message for="rPeriodoSerie"/>
+                    <p:outputLabel value="Período/Série"/>
+                    <p:inputText id="rPeriodoSerie" value="#{requerimentoBean.selecionar.periodoSerie}"
+                                 required="true" requiredMessage="Campo período/série é obrigatório" 
+                                 class="form-control"/>
+                    <p:message for="rPeriodoSerie"/>
 
-                <p:outputLabel value="Turno"/>
-                <p:selectOneMenu id="rTurno" value="#{requerimentoBean.selecionar.turno}" 
-                                 requiredMessage="Campo turno é obrigatório" required="true">
-                    <f:selectItem itemLabel="Selecionar" itemValue="" />
-                    <f:selectItem itemLabel="Manhã" itemValue="Manhã" />
-                    <f:selectItem itemLabel="Tarde" itemValue="Tarde" />
-                    <f:selectItem itemLabel="Noite" itemValue="Noite" />
-                </p:selectOneMenu>
-                <p:message for="rTurno"/>
+                    <p:outputLabel value="Turno"/>
+                    <p:selectOneMenu id="rTurno" value="#{requerimentoBean.selecionar.turno}" 
+                                     requiredMessage="Campo turno é obrigatório" required="true" 
+                                     class="form-control">
+                        <f:selectItem itemLabel="Selecionar" itemValue="" />
+                        <f:selectItem itemLabel="Manhã" itemValue="Manhã" class="form-control" />
+                        <f:selectItem itemLabel="Tarde" itemValue="Tarde" class="form-control"/>
+                        <f:selectItem itemLabel="Noite" itemValue="Noite" class="form-control"/>
+                    </p:selectOneMenu>
+                    <p:message for="rTurno"/>
 
-                <p:outputLabel value="Problema"/>
-                <p:selectOneMenu  id="rProblema" value="#{requerimentoBean.selecionar.problema}" 
-                                  requiredMessage="Campo problema é obrigatório" required="true">
-                    <f:selectItem  itemLabel="Selecionar" itemValue="" />
-                    <f:selectItem itemLabel="Ajuste de matrícula" itemValue="Ajuste de matrícula" />
-                    <f:selectItem itemLabel="Trancamento de matrícula" itemValue="Trancamento de matrícula"/>
-                    <f:selectItem itemLabel="Reabertura de matrícula" itemValue="Reabertura de matrícula" />
-                    <f:selectItem itemLabel="Cancelamento de disciplina" itemValue="Cancelamento de disciplina"/>
-                    <f:selectItem itemLabel="Diploma" itemValue="Diploma"/>
-                </p:selectOneMenu>
-                <p:message for="rProblema"/>
+                    <p:outputLabel value="Problema"/>
+                    <p:selectOneMenu  id="rProblema" value="#{requerimentoBean.selecionar.problema}" 
+                                      requiredMessage="Campo problema é obrigatório" required="true"
+                                      class="form-control">
+                        <f:selectItem  itemLabel="Selecionar" itemValue="" />
+                        <f:selectItem itemLabel="Ajuste de matrícula" itemValue="Ajuste de matrícula" class="form-control"/>
+                        <f:selectItem itemLabel="Trancamento de matrícula" itemValue="Trancamento de matrícula" class="form-control"/>
+                        <f:selectItem itemLabel="Reabertura de matrícula" itemValue="Reabertura de matrícula" class="form-control"/>
+                        <f:selectItem itemLabel="Cancelamento de disciplina" itemValue="Cancelamento de disciplina" class="form-control"/>
+                        <f:selectItem itemLabel="Diploma" itemValue="Diploma" class="form-control"/>
+                    </p:selectOneMenu>
+                    <p:message for="rProblema"/>
 
-                <p:outputLabel value="Observação"/>
-                <p:inputTextarea id="rObservacao" value="#{requerimentoBean.selecionar.observacoes}" 
-                                 requiredMessage="Campo Observações é obrigatório" required="true"/>
-                 <p:message for="rObservacao"/>
+                    <p:outputLabel value="Observação"/>
+                    <p:inputTextarea id="rObservacao" value="#{requerimentoBean.selecionar.observacoes}" 
+                                     requiredMessage="Campo Observações é obrigatório" required="true"
+                                     class="form-control"/>
+                    <p:message for="rObservacao"/>
 
-            </p:panelGrid><br/>
+                </p:panelGrid><br/>
 
-            <p:commandButton value="Alterar" action="#{requerimentoBean.alterar()}" update="@form">
-                <p:confirm message="Deseja alterar este requerimento?"/>
-            </p:commandButton>
+                <p:commandButton value="Alterar" action="#{requerimentoBean.update()}" update="@form" class="btn-padrao">
+                    <p:confirm message="Deseja alterar este requerimento?"/>
+                </p:commandButton>
 
-            <p:confirmDialog global="true">
-                <p:commandButton value="Sim" styleClass="ui-confirmdialog-yes"/>
-                <p:commandButton value="Não" styleClass="ui-confirmdialog-no"/>
-            </p:confirmDialog>
+                <p:confirmDialog global="true">
+                    <p:commandButton value="Sim" styleClass="ui-confirmdialog-yes"/>
+                    <p:commandButton value="Não" styleClass="ui-confirmdialog-no"/>
+                </p:confirmDialog>
 
-        </h:form>
+            </h:form>
+        </div>
     </h:body>
 </html>
 
