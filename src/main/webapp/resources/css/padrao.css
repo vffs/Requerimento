@@ -1,0 +1,29 @@
+/* 
+    Created on : Mar 27, 2021, 1:08:28 PM
+    Author     : valeria
+*/
+.formulario .table th{
+    color: #FFF;
+    background: forestgreen;
+    
+}
+.formulario .btn-padrao{
+    background: none;
+    border: 2px solid forestgreen;
+    color: forestgreen;
+    border-radius: 50px;
+    width: 250px;
+    
+}
+.paddin{
+    padding-bottom: 30px;
+}
+.formulario .btn-login{
+    width: 150px ; 
+}
+
+div.formulario input.form-control{
+    padding: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
